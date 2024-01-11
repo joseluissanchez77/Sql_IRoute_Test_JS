@@ -116,7 +116,7 @@ AS
 --ejecutar procedimiento
 USE [TEST_IR_JS]
 GO
-
+-- Con la opcion AA se peude crear un cliente
 DECLARE	@return_value int,
 		@ctrl int,
 		@msj_ctrl varchar(500),
@@ -149,7 +149,7 @@ GO
 
 USE [TEST_IR_JS]
 GO
-
+-- Con la opcion AB se puede inactivar un cliente 
 DECLARE	@return_value int,
 		@ctrl int,
 		@msj_ctrl varchar(500),
@@ -175,7 +175,7 @@ GO
 
 
 ---------------------------------------------------------------
-
+--procedimiento de consulta
 CREATE PROCEDURE [dbo].[sp_con_clientes]( 
 @identificacion                             VARCHAR (20)=NULL) 
 AS 
@@ -215,8 +215,9 @@ AS
   END
 
  --ejecutar procedimiento 
- ---- consultar todos los registros
+ ---- consultar todos los registros por idendificacion
 exec sp_con_clientes '0931147289';
+--consultar todos los clientes
 exec sp_con_clientes;
 
 --delete from cliente where id >= 16
